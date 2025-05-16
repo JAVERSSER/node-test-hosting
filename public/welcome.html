@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="welcome-message">Welcome!</h1>
+  <p>Thank you for logging in.</p>
+
+  <script>
+    // Get the 'name' query parameter from URL
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('name');
+
+    if (username) {
+      // Update welcome message with username
+      document.getElementById('welcome-message').textContent = `Welcome, ${username}!`;
+    }
+  </script>
+</body>
+</html>
